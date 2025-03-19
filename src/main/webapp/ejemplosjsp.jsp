@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" errorPage="error.jsp" %>
 <%@ page  import="java.util.Random" %>
+
 <!DOCTYPE html>
 <html>
   <head>
+  	<%@ include file="estilobootstrap.jsp" %>
 	<meta charset="UTF-8">
 	<title>Ejemplos JSP</title>
   </head>
@@ -20,5 +22,9 @@
 	<%! Random aleatorio = new Random(); %><%-- Declaración --%>
 	
 	<%= aleatorio.nextInt(100,700) %> 
+	
+	<div class="display-1">Ejemplo de uso de bootstrap</div>
+	<p>A continuación viene una división:</p>
+	<%@include file="operaciones.jsp" %>
   </body>
 </html>

@@ -74,10 +74,7 @@ public class RegistrarServlet extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("registroestudiante.jsp");
-		request.setAttribute("nomb", nom);
-		rd.forward(request, response);
-		//response.sendRedirect("Conexion.jsp");
+		response.sendRedirect("Conexion.jsp");
 	}
 
 }

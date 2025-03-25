@@ -25,7 +25,7 @@
 		Statement st = con.createStatement();
 		
 		// 5to paso: Ejecutar una query
-		ResultSet rs = st.executeQuery("select * from estudiante;");
+		ResultSet rs = st.executeQuery("select * from estudiante order by apellido;");
 		
 		// 6to paso: Procesar los resultados
 		
@@ -55,6 +55,7 @@
 			<th>Apellido</th>
 			<th>Fecha de nacimiento</th>
 			<th>email</th>
+			<th>Acciones</th>
 		</tr>
 	<%
 		// Cargar registros rstantes
@@ -89,9 +90,9 @@
 			out.append("</td>");
 			
 			out.append("<td>");
-			out.append("<a href='/registroestudiante.jsp?id="+id+"'>Editar");
+			out.append("<a class='btn btn-primary' href='/registroestudiante.jsp?id="+id+"'>Editar");
 			out.append("</a>");
-			out.append("<a href='/Eliminar?id="+id+"'>Eliminar");
+			out.append("<a class='btn btn-danger' href='/Eliminar?id="+id+"'>Eliminar");
 			out.append("</a>");
 			out.append("</td>");
 			out.append("</tr>");

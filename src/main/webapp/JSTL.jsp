@@ -24,11 +24,23 @@
 	<h3>Cosas</h3>
 	<%= arr.length %>
 	<table border="1">
-		<c:forEach items = "${arr1}" var="cosa">
+		<c:forEach items = "${arr1}" var="elemento">
 			<tr>
-				<td><c:out value="${cosa}"/></td>
+				<td><c:out value="${elemento}"/></td>
 			</tr>
 		</c:forEach>
 	</table>
+	<h3>Taglib SQL</h3>
+	<sql:setDataSource
+		var="ds" 
+		driver="org.postgresql.Driver" 
+        url="jdbc:postgresql://localhost:5432/universidadx" 
+        user="usuario3" password="123456ABCxyz+"/>
+        <sql:query dataSource="${ds}" var="rs"> 
+         SELECT * FROM estudiante; 
+      </sql:query> 
+      <c:forEach var="student" items="${rs.rows}"> 
+         ${student.nombre} ${student.apellido}<br> 
+      </c:forEach> 
 </body>
 </html>
